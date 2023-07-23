@@ -19,9 +19,7 @@ def AiResponse(request):
             "response": get_response_from_query(db, validated_data['query'])
         })
     except:
-        return Response({
-            "response": "something went wrong"
-        })
+        return Response('something went wrong')
 
 
 
