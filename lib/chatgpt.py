@@ -75,8 +75,8 @@ def get_response_from_query(db, query, k=4):
     return response
 
 
-# video_url = "https://www.youtube.com/watch?v=NYSWn1ipbgg&t=1286s"
-# query = "Who was the first man on the moon/"
+# video_url = "https://www.youtube.com/watch?v=uAbERCAe9iI"
+# query = "What did they talk about in regards to Ukraine?"
 # db = create_db_from_youtube_video_url(video_url)
 # response = get_response_from_query(db, query)
 

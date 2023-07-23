@@ -6,3 +6,6 @@ youtube-transcript-api
 chromadb
 tiktoken
 faiss-cpu
+django
+djangorestframework
+django-cors-headers
