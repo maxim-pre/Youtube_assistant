@@ -19,7 +19,7 @@ def AiResponse(request):
             "response": get_response_from_query(db, validated_data['query'])
         })
     except:
-        return Response('something went wrong')
+        return Response('something went wrong. Please try using a different Youtube URL')
 
 
 
