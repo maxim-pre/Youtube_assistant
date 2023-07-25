@@ -1,3 +1,4 @@
+import os
 from dotenv import find_dotenv, load_dotenv
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.document_loaders import YoutubeLoader
@@ -10,6 +11,8 @@ from langchain.chat_models import ChatOpenAI
 
 # this loads the OPENAI_API_KEY from our .env file. The library that requires the apikey will recognise the name and use its value
 load_dotenv(find_dotenv())
+
+
 
 # this embeddings model is used to create a vector representation of a piece of text for OpenAI.
 embeddings_model = OpenAIEmbeddings()
