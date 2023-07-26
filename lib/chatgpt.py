@@ -12,10 +12,11 @@ from langchain.chat_models import ChatOpenAI
 # this loads the OPENAI_API_KEY from our .env file. The library that requires the apikey will recognise the name and use its value
 load_dotenv(find_dotenv())
 
-
+OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
+print(OPENAI_API_KEY)
 
 # this embeddings model is used to create a vector representation of a piece of text for OpenAI.
-embeddings_model = OpenAIEmbeddings()
+embeddings_model = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
 
 def create_db_from_youtube_video_url(url):
     # use langchain's document loaders to get a full transcript of a youtube video from it's url 
@@ -48,7 +49,7 @@ def get_response_from_query(db, query, k=4):
     docs_page_content = ' '.join([d.page_content for d in docs])
 
     # llm = OpenAI(model_name="gpt-3.5-turbo")
-    llm = ChatOpenAI()
+    llm = ChatOpenAI(openai_api_key=OPENAI_API_KEY)
 
 
 
@@ -78,9 +79,9 @@ def get_response_from_query(db, query, k=4):
     return response
 
 
-# video_url = "https://www.youtube.com/watch?v=Ha0m9rPcbRU"
-# query = "what is this video about?"
-# db = create_db_from_youtube_video_url(video_url)
-# response = get_response_from_query(db, query)
+video_url = "https://www.youtube.com/watch?v=Ha0m9rPcbRU"
+query = "what is this video about?"
+db = create_db_from_youtube_video_url(video_url)
+response = get_response_from_query(db, query)
 
-# print(response)
+print(response)
