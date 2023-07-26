@@ -13,7 +13,6 @@ from langchain.chat_models import ChatOpenAI
 load_dotenv(find_dotenv())
 
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
-print(OPENAI_API_KEY)
 
 # this embeddings model is used to create a vector representation of a piece of text for OpenAI.
 embeddings_model = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
@@ -79,9 +78,10 @@ def get_response_from_query(db, query, k=4):
     return response
 
 
-video_url = "https://www.youtube.com/watch?v=Ha0m9rPcbRU"
-query = "what is this video about?"
-db = create_db_from_youtube_video_url(video_url)
-response = get_response_from_query(db, query)
+# Test the script
 
-print(response)
+# video_url = "youtube video URL"
+# query = "Question about the video"
+# db = create_db_from_youtube_video_url(video_url)
+# response = get_response_from_query(db, query)
+# print(response)
